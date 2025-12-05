@@ -1,0 +1,202 @@
+:root {
+  --dot-brown: #BF9C86;
+  --dot-beige: #E8DFCE;
+  --dot-mauve: #99817C;
+  --dot-green: #AFD49E;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Quicksand', system-ui, -apple-system, sans-serif;
+  background: white;
+}
+
+img {
+  display: block;
+  border: 0;
+}
+
+/* PAGE CONTAINER */
+.site {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: white;
+}
+
+/* BACKGROUND SVG */
+.background {
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* NAVIGATION */
+.nav {
+  position: absolute;
+  top: 36px;
+  right: 56px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #0d3a2f;
+  z-index: 20;
+}
+
+.nav .item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  transition: opacity 0.15s ease, transform 0.12s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav .item:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+.nav .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* LINKEDIN ICON */
+.linkedin {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkedin img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* CLIENTS ROW */
+.clients {
+  position: absolute;
+  left: 72px;
+  bottom: 86px;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  z-index: 25;
+}
+
+.client {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: block;
+  text-decoration: none;
+}
+
+.client img.main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* CLIENT 1 SOCIAL ICONS */
+.socials {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: flex;
+  gap: 6px;
+  z-index: 30;
+}
+
+.socials a {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+}
+
+.socials a img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* CLIENT 2 & 3 SINGLE ICON */
+.single-social {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  z-index: 30;
+}
+
+.single-social img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .nav {
+    top: 20px;
+    right: 20px;
+    gap: 16px;
+    font-size: 12px;
+  }
+
+  .clients {
+    left: 16px;
+    bottom: 16px;
+    gap: 24px;
+  }
+
+  .client {
+    width: 100px;
+    height: 100px;
+  }
+
+  .socials a,
+  .single-social {
+    width: 24px;
+    height: 24px;
+  }
+
+  .socials a img,
+  .single-social img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
