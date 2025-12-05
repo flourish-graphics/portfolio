@@ -15,6 +15,7 @@ html, body {
   height: 100%;
   font-family: 'Quicksand', system-ui, -apple-system, sans-serif;
   background: white;
+  overflow-x: hidden;
 }
 
 img {
@@ -24,24 +25,25 @@ img {
 
 /* PAGE CONTAINER */
 .site {
-  position: relative;  /* important for positioning absolute children */
+  position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
   background: white;
 }
 
 /* BACKGROUND SVG */
 .background {
-  position: absolute;  /* place behind everything */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;       /* full viewport height */
-  object-fit: cover;   /* scale and crop if needed */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
   user-select: none;
   -webkit-user-drag: none;
-  z-index: 0;          /* behind nav & clients */
 }
 
 /* NAVIGATION */
@@ -56,7 +58,7 @@ img {
   font-size: 14px;
   letter-spacing: 1px;
   color: #0d3a2f;
-  z-index: 20;         /* above background */
+  z-index: 20;
 }
 
 .nav .item {
@@ -81,7 +83,6 @@ img {
   flex-shrink: 0;
 }
 
-/* LINKEDIN ICON */
 .linkedin {
   display: inline-flex;
   width: 28px;
@@ -104,7 +105,7 @@ img {
   display: flex;
   gap: 48px;
   align-items: center;
-  z-index: 25;        /* above background, below nav if needed */
+  z-index: 25;
 }
 
 .client {
@@ -122,7 +123,6 @@ img {
   border-radius: 6px;
 }
 
-/* CLIENT 1 SOCIAL ICONS */
 .socials {
   position: absolute;
   right: 6px;
@@ -150,7 +150,6 @@ img {
   object-fit: contain;
 }
 
-/* CLIENT 2 & 3 SINGLE ICON */
 .single-social {
   position: absolute;
   right: 8px;
@@ -172,7 +171,7 @@ img {
   object-fit: contain;
 }
 
-/* RESPONSIVE ADJUSTMENTS */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .nav {
     top: 20px;
