@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flourish Graphics</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --dot-brown: #BF9C86;
+      --dot-beige: #E8DFCE;
+      --dot-mauve: #99817C;
+      --dot-green: #AFD49E;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      height:100%;
+      background:white;
+      font-family:'Quicksand',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    }
+    img{display:block;border:0}
+
+    /* SITE WRAPPER */
+    .site{
+      position:relative;
+      width:100%;
+      min-height:100vh;
+      overflow-x:hidden;
+      background:white;
+    }
+
+    /* BACKGROUND SVG (contains all headings/text from your design) */
+    .background{
+      width:100%;
+      height:auto;
+      user-select:none;
+      -webkit-user-drag:none;
+      display:block;
+    }
+
+    /* TOP-RIGHT NAV: colored dots + words */
+    .nav{
+      position:absolute;
+      top:36px;
+      right:56px;
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:1px;
+      color:#0d3a2f;
+      z-index:40; /* sits above SVG */
+    }
+
+    .nav .item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:6px 4px;
+      transition:opacity .15s ease, transform .12s ease;
+      color: #0d3a2f;
+      text-decoration: none;
+    }
+    .nav .item:hover{
+      opacity:.75;
+      transform:translateY(-1px);
+    }
+
+    .nav .dot{
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      flex:0 0 14px;
+    }
+
+    /* LinkedIn placeholder */
+    .linkedin{
+      display:inline-flex;
+      width:28px;
+      height:28px;
+      align-items:center;
+      justify-content:center;
+      margin-left:6px;
+    }
+    .linkedin img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+    }
+
+    /* CLIENTS ROW (position over SVG — tweak left / bottom to align exactly) */
+    .clients{
+      position:absolute;
+      left:72px;
+      bottom:86px;
+      display:flex;
+      gap:48px;
+      align-items:center;
+      z-index:45;
+    }
+
+    .client{
+      position:relative;
+      width:140px;
+      height:140px;
+      display:block;
+    }
+
+    .client img.main{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:6px;
+      display:block;
+    }
+
+    /* CLIENT 1: two small social icons */
+    .socials{
+      position:absolute;
+      right:6px;
+      bottom:6px;
+      display:flex;
+      gap:6px;
+      z-index:30;
+    }
+    .socials a{
+      display:flex;
+      width:28px;
+      height:28px;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:rgba(255,255,255,0.95);
+      box-shadow:0 1px 4px rgba(0,0,0,0.12);
+      text-decoration:none;
+    }
+    .socials a img{
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      display:block;
+    }
+
+    /* CLIENT 2 & 3: single instagram icon */
+    .single-social{
+      position:absolute;
+      right:8px;
+      bottom:8px;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.95);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 1px 4px rgba(0,0,0,0.12);
+      z-index:30;
+      text-decoration:none;
+    }
+    .single-social img{
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      display:block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site">
+
+    <!-- NAVIGATION: colored dots + words (clickable links) -->
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="item" href="#branding" title="Branding">
+        <span class="dot" style="background:var(--dot-brown)"></span>
+        <span>BRANDING</span>
+      </a>
+
+      <a class="item" href="#print" title="Print">
+        <span class="dot" style="background:var(--dot-beige)"></span>
+        <span>PRINT</span>
+      </a>
+
+      <a class="item" href="#about" title="About">
+        <span class="dot" style="background:var(--dot-mauve)"></span>
+        <span>ABOUT</span>
+      </a>
+
+      <a class="item" href="#contact" title="Contact">
+        <span class="dot" style="background:var(--dot-green)"></span>
+        <span>CONTACT</span>
+      </a>
+
+      <!-- LinkedIn icon placeholder (replace file later) -->
+      <a class="linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="images/linkedin-icon.svg" alt="LinkedIn">
+      </a>
+    </nav>
+
+    <!-- BACKGROUND SVG (contains all site copy/graphics) -->
+    <img class="background" src="images/background.svg" alt="Background SVG">
+
+    <!-- CLIENTS: 1–5 (1: insta + tiktok; 2 & 3: insta; 4 & 5: image only) -->
+    <div class="clients" role="list" aria-label="Client logos/links">
+
+      <!-- CLIENT 1 -->
+      <a class="client" href="https://client1.example.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Client 1">
+        <img class="main" src="images/client1.png" alt="Client 1">
+        <div class="socials" aria-hidden="false">
+          <a href="https://instagram.com/client1" target="_blank" rel="noopener noreferrer" title="Client 1 Instagram">
+            <img src="images/insta-icon.svg" alt="Instagram">
+          </a>
+          <a href="https://tiktok.com/@client1" target="_blank" rel="noopener noreferrer" title="Client 1 TikTok">
+            <img src="images/tiktok-icon.svg" alt="TikTok">
+          </a>
+        </div>
+      </a>
+
+      <!-- CLIENT 2 -->
+      <a class="client" href="https://client2.example.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Client 2">
+        <img class="main" src="images/client2.png" alt="Client 2">
+        <a class="single-social" href="https://instagram.com/client2" target="_blank" rel="noopener noreferrer" title="Client 2 Instagram">
+          <img src="images/insta-icon.svg" alt="Instagram">
+        </a>
+      </a>
+
+      <!-- CLIENT 3 -->
+      <a class="client" href="https://client3.example.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Client 3">
+        <img class="main" src="images/client3.png" alt="Client 3">
+        <a class="single-social" href="https://instagram.com/client3" target="_blank" rel="noopener noreferrer" title="Client 3 Instagram">
+          <img src="images/insta-icon.svg" alt="Instagram">
+        </a>
+      </a>
+
+      <!-- CLIENT 4 (image only) -->
+      <a class="client" href="https://client4.example.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Client 4">
+        <img class="main" src="images/client4.png" alt="Client 4">
+      </a>
+
+      <!-- CLIENT 5 (image only) -->
+      <a class="client" href="https://client5.example.com" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Client 5">
+        <img class="main" src="images/client5.png" alt="Client 5">
+      </a>
+
+    </div>
+
+  </div>
+</body>
+</html>
