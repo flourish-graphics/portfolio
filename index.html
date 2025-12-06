@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Flourish Graphics</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="site">
+    <!-- Inline SVG as background -->
+    <svg class="background-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <!-- paste your SVG inner contents here (paths, groups). DO NOT include another <svg> wrapper. -->
+      <!-- Example fallback rect (remove when you paste your real SVG content) -->
+      <rect width="800" height="600" fill="#f6f2ee"/>
+      <!-- ... your actual SVG shapes ... -->
+    </svg>
 
-  <!-- Background SVG -->
-  <div class="background-wrapper">
-    <img src="home.svg" alt="Background Image">
+    <nav class="nav" aria-label="Primary navigation">
+      <!-- nav content -->
+    </nav>
+
+    <div class="clients"></div>
+
+    <main class="page-content">
+      <h1>Flourish Graphics</h1>
+    </main>
   </div>
-
-  <!-- Page Content Example -->
-  <main>
-    <h1>Flourish Graphics</h1>
-    <p>Your page content here...</p>
-  </main>
-
 </body>
 </html>
